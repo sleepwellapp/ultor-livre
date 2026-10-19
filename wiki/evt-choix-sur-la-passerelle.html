@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement V · fin de l&#x27;Acte II, vers le jour 104</td></tr><tr><th>Lieu</th><td><a class="wl" href="vaisseau-nuee.html">La Nuée</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-heros.html">Ultor</a>, <a class="wl" href="perso-cafard.html">Kithrin Chass, le Cafard</a>, <a class="wl" href="perso-ianos.html">IANOS</a></td></tr><tr><th>Issue</th><td>tué, prisonnier ou allié</td></tr><tr><th>Quand</th><td>fin de l'Acte II, vers le jour 104</td></tr><tr><th>Où</th><td><a class="wl" href="vaisseau-nuee.html">La Nuée</a></td></tr><tr><th>Issue</th><td>tué, prisonnier ou allié</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-choix-sur-la-passerelle">Dans la chronologie <span class="mono">28 / 73</span></a><div class="chpn"><a href="bataille-maison-du-cafard.html"><small>avant</small>La chute de la maison du Cafard</a><a class="nx" href="bataille-de-la-nuee.html"><small>après</small>La chute de la Nuée</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-choix-sur-la-passerelle">Dans la chronologie <span class="mono">28 / 75</span></a><div class="chpn"><a href="bataille-maison-du-cafard.html"><small>avant</small>La chute de la maison du Cafard</a><a class="nx" href="bataille-de-la-nuee.html"><small>après</small>La chute de la Nuée</a></div></div>
 </aside>
 <div class="prose"><p>« Tes marines tiennent la passerelle. Il est à genoux au milieu d'eux. Il te regarde. » Le <a class="wl" href="perso-cafard.html">Cafard</a> te reconnaît : « …Non. » « L'Astrée. » « Alors c'était vous. » « Vous étiez mort, Monseigneur. J'ai tiré sur votre vaisseau. » « Je sais ce que vous êtes venu chercher. Mais vous n'avez aucune idée de ce qui vous attend de l'autre côté de la Passe. » S'il peut devenir ton allié, il offre ce qui lui reste : « J'ai encore des hommes, des routes et ce qui reste de la Nuée. Je sais où passent les convois du Duc. » S'il a rasé ta colonie : « Je n'ai plus rien à vous offrir. » Si personne n'est monté à bord, sa voix passe sur le canal pendant que la <a class="wl" href="vaisseau-nuee.html">Nuée</a> se brise, et il ne reste que le tuer.</p>
 <ul><li>TUER, toujours possible : « Alors faites-le. » « Rhasque ne vous a pas tué. Il vous a seulement donné une raison de revenir. » Les mineurs respirent : un bonus de production pendant trente jours.</li><li>PRISONNIER, s'il a été pris à l'abordage : « Vous allez me laisser vivre. » « Pourquoi ? » Un aveu à chaque chapitre de l'Acte 3, sur les routes du Duc ; son sort se rouvre depuis la carte.</li><li>ALLIÉ, amiral ou intendant, s'il n'a rasé aucune colonie : « Ce qui reste de la Nuée est à vous. Je connais la route jusqu'à Rhasque. » ou « Les mines tourneront pour vous. Les mineurs me détestent ; ils travailleront quand même. » Une part de la Nuée passe sous tes couleurs, contre la colère des mineurs.</li></ul>

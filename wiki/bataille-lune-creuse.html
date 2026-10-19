@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-bataille">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg>Bataille</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement II · Acte II, vers le jour 48</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-lune-creuse.html">La Lune Creuse</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-heros.html">Ultor</a>, <a class="wl" href="perso-vekt.html">Vekt</a></td></tr><tr><th>Issue</th><td>la Lune prise ; Vekt mort ou capturé</td></tr><tr><th>Quand</th><td>Acte II, vers le jour 48</td></tr><tr><th>Où</th><td><a class="wl" href="lieu-lune-creuse.html">La Lune Creuse</a></td></tr><tr><th>Issue</th><td>la Lune prise ; Vekt mort ou capturé</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-lune-creuse">Dans la chronologie <span class="mono">18 / 73</span></a><div class="chpn"><a href="evt-appel-a-vahn.html"><small>avant</small>L&#x27;appel à Vahn</a><a class="nx" href="evt-vrai-nom.html"><small>après</small>Le vrai nom : Kithrin Chass</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-lune-creuse">Dans la chronologie <span class="mono">18 / 75</span></a><div class="chpn"><a href="evt-appel-a-vahn.html"><small>avant</small>L&#x27;appel à Vahn</a><a class="nx" href="evt-vrai-nom.html"><small>après</small>Le vrai nom : Kithrin Chass</a></div></div>
 </aside>
 <div class="prose"><p>Triangulée par la sonde, ses hangars fermés un par un, la <a class="wl" href="lieu-lune-creuse.html">Lune Creuse</a> se prend avec des croiseurs et des corvettes, qui enchaînent les tirs sur les chasseurs légers. La couvée de <a class="wl" href="perso-vekt.html">Vekt</a> ne rompt jamais. Les feux du <a class="wl" href="perso-cafard.html">Cafard</a> reculent de la lune, les tiens tiennent son orbite. Tu gagnes le poste d'écoute ; il perd les renforts de son essaim (<a class="wl" href="concept-atouts-du-cafard.html">Les atouts du Cafard</a>). IANOS, sur les positions saisies : « Elles convergent vers un point de la carte où mes instruments ne voient rien du tout. » C'est souvent le premier lieutenant qui tombe, et la peur du Cafard.</p></div>
 <div class="gal"><button class="th" type="button" data-full="img/deroule-15-base-prise-lune-creuse.jpg" aria-label="Agrandir l'image"><img src="img/deroule-15-base-prise-lune-creuse.jpg" alt="La chute de la Lune Creuse" loading="lazy"></button></div>

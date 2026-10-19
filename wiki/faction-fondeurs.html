@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-faction">
@@ -38,10 +44,11 @@
 </aside>
 <div class="prose"><p>Les Fondeurs est le nom que <a class="wl" href="faction-archivistes.html">les archivistes</a> leur donnent. Ils ont bâti la flotte qui est morte sur <a class="wl" href="planete-cinis-ii.html">Cinis II</a> : le vieux champ, l'Ossuaire, et un métal que personne ne sait refaire.</p>
 <p>Leurs chantiers en anneau tournent encore, brisés, autour de <a class="wl" href="planete-vor-vi.html">Vôr VI</a> (<a class="wl" href="lieu-anneau-de-vor.html">L&#x27;anneau de Vôr</a>) ; leurs épaves entourent une porte fermée à <a class="wl" href="sys-sarn.html">Sarn</a> (<a class="wl" href="lieu-anneau-de-sarn.html">L&#x27;anneau autour du vide</a>). Partout, la même règle : des épaves d'un seul camp, toutes tournées vers la même chose, et rien en face. Ce qu'ils combattaient, c'était le sol (<a class="wl" href="bataille-mort-du-dieu-de-cinis.html">La mort du dieu de Cinis</a>).</p>
-<p>La lecture qui retourne tout vient au quatrième mouvement : ils n'ont pas tué le dieu de Cinis pour eux. Leur flotte a marché après qu'un de leurs seigneurs a tout perdu, et elle était accompagnée (<a class="wl" href="lieu-poste-vide.html">Le poste vide</a>).</p></div>
+<p>La lecture qui retourne tout vient au quatrième mouvement : ils n'ont pas tué le dieu de Cinis pour eux. Leur flotte a marché après qu'un de leurs seigneurs a tout perdu, et elle était accompagnée (<a class="wl" href="lieu-poste-vide.html">Le poste vide</a>).</p>
+<p><strong>Ce que le joueur ignore encore.</strong> Le dieu qu'ils ont tué, c'est <a class="wl" href="perso-ianos.html">IANOS</a> (<a class="wl" href="evt-mort-d-ianos.html">La mort d&#x27;IANOS</a>) : les Fondeurs étaient le pion d'un autre dieu, et leur flotte morte est un témoin de la guerre qui a fait les portes. « Fondeurs » n'est qu'un nom d'archiviste pour des coques qu'on ne reconnaît pas.</p></div>
 <div class="gal"><button class="th" type="button" data-full="img/a3-ossuaire.jpg" aria-label="Agrandir l'image"><img src="img/a3-ossuaire.jpg" alt="Les Fondeurs" loading="lazy"></button></div>
-<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="bataille-mort-du-dieu-de-cinis.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg><span>La mort du dieu de Cinis</span></a></li><li><a href="lieu-anneau-de-vor.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau de Vôr</span></a></li><li><a href="lieu-anneau-de-sarn.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau autour du vide</span></a></li><li><a href="faction-veilleurs.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Veilleurs</span></a></li></ul></section>
-<section class="rel cited"><h2>Cité dans <span class="mono">8</span></h2><ul class="chips"><li><a href="faction-archivistes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les archivistes d&#x27;Aurelle</span></a></li><li><a href="faction-veilleurs.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Veilleurs</span></a></li><li><a href="lieu-anneau-de-sarn.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau autour du vide</span></a></li><li><a href="lieu-anneau-de-vor.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau de Vôr</span></a></li><li><a href="lieu-conduit-de-tessara.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>Le conduit de Tessara IV</span></a></li><li><a href="bataille-mort-du-dieu-de-cinis.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg><span>La mort du dieu de Cinis</span></a></li><li><a href="concept-autres-empires.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les autres empires</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li></ul></section>
+<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="bataille-mort-du-dieu-de-cinis.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg><span>La mort du dieu de Cinis</span></a></li><li><a href="lieu-anneau-de-vor.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau de Vôr</span></a></li><li><a href="lieu-anneau-de-sarn.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau autour du vide</span></a></li><li><a href="faction-veilleurs.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Veilleurs</span></a></li><li><a href="evt-mort-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La mort d&#x27;IANOS</span></a></li><li><a href="perso-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>IANOS</span></a></li></ul></section>
+<section class="rel cited"><h2>Cité dans <span class="mono">9</span></h2><ul class="chips"><li><a href="faction-archivistes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les archivistes d&#x27;Aurelle</span></a></li><li><a href="faction-veilleurs.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Veilleurs</span></a></li><li><a href="lieu-anneau-de-sarn.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau autour du vide</span></a></li><li><a href="lieu-anneau-de-vor.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>L&#x27;anneau de Vôr</span></a></li><li><a href="lieu-conduit-de-tessara.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>Le conduit de Tessara IV</span></a></li><li><a href="evt-mort-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La mort d&#x27;IANOS</span></a></li><li><a href="bataille-mort-du-dieu-de-cinis.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg><span>La mort du dieu de Cinis</span></a></li><li><a href="concept-autres-empires.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les autres empires</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li></ul></section>
 </div></div></article>
 </main>
 <footer class="foot">

@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · depuis la nuit de la chute, tout l&#x27;Acte II</td></tr><tr><th>Participants</th><td><a class="wl" href="perso-duc-rhasque.html">Le Duc Rhasque</a>, <a class="wl" href="perso-margrave.html">La Margrave d&#x27;Estre</a>, <img class="bl-s" src="blasons/faction-conseil.svg" alt="" width="20" height="24"><a class="wl" href="faction-conseil.html">Le Conseil de l&#x27;Empire</a>, <img class="bl-s" src="blasons/faction-federation.svg" alt="" width="20" height="24"><a class="wl" href="faction-federation.html">La Fédération des Routes</a></td></tr><tr><th>Issue</th><td>elle continue</td></tr><tr><th>Quand</th><td>depuis la nuit de la chute, tout l'Acte II</td></tr><tr><th>Issue</th><td>elle continue</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-guerre-de-succession">Dans la chronologie <span class="mono">5 / 73</span></a><div class="chpn"><a href="evt-saut.html"><small>avant</small>Le saut sans calcul</a><a class="nx" href="evt-regence.html"><small>après</small>La régence de Rhasque</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-guerre-de-succession">Dans la chronologie <span class="mono">5 / 75</span></a><div class="chpn"><a href="evt-saut.html"><small>avant</small>Le saut sans calcul</a><a class="nx" href="evt-regence.html"><small>après</small>La régence de Rhasque</a></div></div>
 </aside>
 <div class="prose"><p>Depuis la nuit d'Ys (<a class="wl" href="evt-ys.html">La nuit d&#x27;Ys, la chute</a>), l'héritier est cru mort. Le <a class="wl" href="faction-conseil.html">Conseil</a> se réunit sans quorum. Le <a class="wl" href="perso-duc-rhasque.html">Duc Rhasque</a> se dit régent et garde le sceau (<a class="wl" href="evt-regence.html">La régence de Rhasque</a>), puis se fait Protecteur du trône. La <a class="wl" href="perso-margrave.html">Margrave d&#x27;Estre</a> refuse la régence et lève ses flottes. Première vraie bataille aux Portes de Hald (<a class="wl" href="bataille-portes-de-hald.html">La bataille des Portes de Hald</a>), une trêve de dix jours qui n'en dure que trois, des chantiers réquisitionnés, des équipages qui vendent leurs vaisseaux à qui paie, une <a class="wl" href="faction-federation.html">Fédération</a> qui se lave les mains et rationne l'Ichor.</p>
 <p>Elle dure parce qu'aucun camp ne tient à la fois le sceau, le Conseil et l'Ichor. Le Duc rappelle ses escadres des marches pour les jeter contre la Margrave : les passes perdues ne sont plus gardées que par ceux qui paient le tribut. Tu la suis par les <a class="wl" href="concept-nouvelles-de-l-empire.html">nouvelles de l&#x27;Empire</a>, qui parlent d'un système, jamais de toi. La dernière : « La guerre ne finira pas cette année. »</p></div>

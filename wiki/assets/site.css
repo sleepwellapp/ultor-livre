@@ -1,0 +1,80 @@
+/* Le site d'Ultor · l'en-tête commun (accueil, livre, Acte III, wiki) et la recherche globale.
+   La charte « Orbite » du wiki : la nuit, le platine, Marcellus, Source Sans 3, IBM Plex Mono, un seul accent ambre.
+   Tout est rangé sous .site et ses jetons portent le préfixe --o- : la feuille se pose sur n'importe quelle page du site
+   sans toucher à ses styles. Mobile d'abord (412 px). */
+.site{
+  --o-night:#05070F;--o-deep:#0B1020;--o-surface:#0C101C;--o-line:#24304A;--o-line-soft:#182238;
+  --o-platinum:#F3F0E8;--o-ink:#DFE3EA;--o-steel:#8D95A6;--o-dim:#5C6474;--o-amber:#E8A64A;
+  --o-display:"Marcellus",Georgia,serif;--o-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;--o-mono:"IBM Plex Mono",ui-monospace,monospace;
+  position:relative;z-index:60;box-sizing:border-box;padding:0 var(--site-g,16px);
+  font:16px/1.4 var(--o-body);color:var(--o-ink);text-align:left;letter-spacing:normal;text-transform:none
+}
+.site *,.site *::before,.site *::after{box-sizing:border-box}
+.site-in{max-width:1120px;margin:0 auto}
+.site a{text-decoration:none}
+.site :focus-visible{outline:2px solid var(--o-amber);outline-offset:2px}
+
+/* la barre : la marque (l'accueil), les trois sections, la loupe */
+.site-bar{display:flex;flex-wrap:wrap;align-items:center;min-height:56px;border-bottom:1px solid var(--o-line-soft)}
+.site-brand{display:inline-flex;align-items:center;min-height:44px;padding-right:12px;margin-right:auto;
+  font:400 23px/1 var(--o-display);letter-spacing:.07em;color:var(--o-platinum)}
+.site-brand:hover{color:#fff}
+.site-nav{display:flex;align-items:center}
+.site-nav a{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:0 9px;
+  font:600 12px/1 var(--o-body);letter-spacing:.13em;text-transform:uppercase;color:var(--o-steel);white-space:nowrap}
+.site-nav a:hover{color:var(--o-platinum)}
+.site-nav a[aria-current]{color:var(--o-platinum)}
+.site-nav a[aria-current]::after{content:"";position:absolute;left:9px;right:9px;bottom:-1px;height:2px;background:var(--o-amber)}
+.site-nav .sn-acc,.site-nav .sn-l{display:none}
+.site-qb{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0 -8px 0 2px;padding:0;
+  background:none;border:0;border-radius:4px;color:var(--o-steel);cursor:pointer}
+.site-qb:hover,.site-qb[aria-expanded="true"]{color:var(--o-platinum)}
+.site-qb svg,.site-q .lp{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+/* la recherche : repliée derrière la loupe sur téléphone, ouverte dans la barre sur ordinateur */
+.site-q{position:relative;display:none;flex:1 0 100%;margin:0 0 10px}
+.site.q-open .site-q{display:block}
+.site-q .lp{position:absolute;left:13px;top:13px;color:var(--o-steel);pointer-events:none}
+.site-q input{display:block;width:100%;height:46px;margin:0;padding:0 14px 0 40px;font:16px var(--o-body);color:var(--o-platinum);
+  background:var(--o-surface);border:1px solid var(--o-line);border-radius:4px;-webkit-appearance:none;appearance:none}
+.site-q input::placeholder{color:var(--o-dim)}
+.site-q input:focus{outline:none;border-color:var(--o-steel)}
+.site-q input::-webkit-search-cancel-button{filter:invert(.6)}
+.site-qr{position:absolute;left:0;right:0;top:calc(100% + 4px);margin:0;padding:4px;list-style:none;background:var(--o-deep);
+  border:1px solid var(--o-line);border-radius:4px;box-shadow:0 18px 40px rgba(0,0,0,.6);max-height:min(72vh,560px);overflow:auto;z-index:2}
+.site-qr li{margin:0;padding:0;list-style:none}
+.site-qr li::marker{content:none}
+.site-qr .gh{padding:10px 10px 4px;font:600 10.5px/1 var(--o-body);letter-spacing:.2em;text-transform:uppercase;color:var(--o-amber)}
+.site-qr li a{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:10px;padding:9px 10px;border-radius:3px;min-height:44px;color:var(--o-ink)}
+.site-qr .gl{grid-row:span 2;width:18px;height:18px;margin-top:2px;fill:var(--o-steel)}
+.site-qr li a b{font-weight:600;color:var(--o-platinum);line-height:1.3}
+.site-qr li a b mark{background:none;color:var(--o-amber)}
+.site-qr li a small{font:600 11px var(--o-body);letter-spacing:.12em;text-transform:uppercase;color:var(--o-steel);margin-left:8px}
+.site-qr li a span{grid-column:2;font-size:14px;line-height:1.35;color:var(--o-steel);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.site-qr li.sel a,.site-qr li a:hover{background:var(--o-line-soft)}
+.site-qr .none{padding:12px 10px;color:var(--o-steel);font-size:15px}
+
+/* la seconde ligne d'une section (le wiki : son accueil, la carte, la chronologie, l'index) */
+.site-sub{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0 calc(-1 * var(--site-g,16px));padding:0 var(--site-g,16px);border-bottom:1px solid var(--o-line-soft)}
+.site-sub::-webkit-scrollbar{display:none}
+.site-sub a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font:600 11.5px/1 var(--o-body);letter-spacing:.14em;text-transform:uppercase;color:var(--o-steel);white-space:nowrap}
+.site-sub a:first-child{padding-left:0}
+.site-sub a:hover,.site-sub a[aria-current]{color:var(--o-platinum)}
+.site-sub a[aria-current]{box-shadow:inset 0 -2px var(--o-amber)}
+.site-sub a:first-child[aria-current]{box-shadow:none;color:var(--o-amber)}
+
+@media (min-width:600px){
+  .site-nav .sn-acc{display:inline-flex}
+  .site-nav a{padding:0 11px}
+  .site-nav a[aria-current]::after{left:11px;right:11px}
+}
+@media (min-width:900px){
+  .site-nav .sn-l{display:inline}
+  .site-bar{flex-wrap:nowrap;min-height:64px}
+  .site-brand{margin-right:18px}
+  .site-nav{margin-right:auto}
+  .site-qb{display:none}
+  .site-q{display:block;flex:0 1 340px;margin:0 0 0 16px}
+  .site-qr{left:auto;width:min(480px,calc(100vw - 56px))}
+}
+@media print{.site{display:none}}

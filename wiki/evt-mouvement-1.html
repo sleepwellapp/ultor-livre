@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte III · mouvement I · jours 107 à 128</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-heros.html">Ultor</a>, <a class="wl" href="perso-orm.html">Orm le Glouton</a>, <a class="wl" href="perso-inspecteur-du-duc.html">L&#x27;inspecteur du Duc</a>, <a class="wl" href="perso-talia.html">Talia Brenn</a>, <a class="wl" href="perso-ianos.html">IANOS</a></td></tr><tr><th>Issue</th><td>le masque posé, la porte de Sarn prise</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-mouvement-1">Dans la chronologie <span class="mono">35 / 73</span></a><div class="chpn"><a href="bataille-mort-du-dieu-de-cinis.html"><small>avant</small>La mort du dieu de Cinis</a><a class="nx" href="evt-asile-de-sevrin.html"><small>après</small>Sevrin demande asile</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-mouvement-1">Dans la chronologie <span class="mono">35 / 75</span></a><div class="chpn"><a href="bataille-mort-du-dieu-de-cinis.html"><small>avant</small>La mort du dieu de Cinis</a><a class="nx" href="evt-asile-de-sevrin.html"><small>après</small>Sevrin demande asile</a></div></div>
 </aside>
 <div class="prose"><p><strong>Où tu en es.</strong> La Nuée tombée, <a class="wl" href="lieu-passe-de-sarn.html">la Passe de Sarn</a> est à toi. Tu as <a class="wl" href="sys-cinis.html">Cinis</a>, son <a class="wl" href="concept-ichor.html">Ichor</a>, une flotte que personne n'a vue venir, et un nom que tu ne peux pas encore dire. Sous la plaine est de <a class="wl" href="planete-cinis-ii.html">Cinis II</a>, un point verrouillé : <a class="wl" href="lieu-balise-sous-la-plaine.html">la source des trois battements</a>, la destination de tout l'acte, que tu vois dès le premier jour.</p>
 <p><strong>Ce qui vient du dehors.</strong> Vers le jour 110, <a class="wl" href="evt-inspection-du-duc.html">l&#x27;inspection du Duc</a> : un croiseur rouge, un inspecteur, des marines. Ce qu'il trouve dépend de ce que tu as fait du <a class="wl" href="perso-cafard.html">Cafard</a>, et c'est là que naît <a class="wl" href="concept-masque.html">le Baron des Cendres</a>. Sa lettre porte <a class="wl" href="concept-sceau.html">le sceau à deux profils</a>. Vers le jour 118, <a class="wl" href="bataille-portes-de-hald.html">la bataille des Portes de Hald</a>, annoncée trois jours avant : la guerre des autres sous tes yeux.</p>

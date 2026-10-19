@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-bataille">
@@ -35,7 +41,7 @@
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg>Bataille</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · Acte II, par les nouvelles</td></tr><tr><th>Participants</th><td><img class="bl-s" src="blasons/faction-empire.svg" alt="" width="20" height="24"><a class="wl" href="faction-empire.html">L&#x27;Empire</a></td></tr><tr><th>Issue</th><td>indécise</td></tr><tr><th>Quand</th><td>Acte II, par les nouvelles</td></tr><tr><th>Issue</th><td>indécise</td></tr></table>
 <div class="sub">À l'Acte III</div><table class="facts"><tr><th>Issue à l&#x27;Acte III</th><td>un vainqueur affaibli, un champ à piller</td></tr><tr><th>Quand, à l&#x27;Acte III</th><td>vers le jour 118</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-portes-de-hald">Dans la chronologie <span class="mono">8 / 73</span></a><div class="chpn"><a href="evt-siege-d-aurelle.html"><small>avant</small>Le siège d&#x27;Aurelle</a><a class="nx" href="evt-nom-arrache.html"><small>après</small>Il a un nom</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-portes-de-hald">Dans la chronologie <span class="mono">8 / 75</span></a><div class="chpn"><a href="evt-siege-d-aurelle.html"><small>avant</small>Le siège d&#x27;Aurelle</a><a class="nx" href="evt-nom-arrache.html"><small>après</small>Il a un nom</a></div></div>
 </aside>
 <div class="prose"><p>« Première vraie bataille entre deux maisons, aux Portes de Hald. Quarante vaisseaux perdus de part et d'autre, et aucune des deux ne dit avoir gagné. » Tu ne la connais que par une <a class="wl" href="concept-nouvelles-de-l-empire.html">nouvelle de l&#x27;Empire</a>, une bribe de la <a class="wl" href="evt-guerre-de-succession.html">guerre de succession</a> qui se fait loin de Cinis.</p></div>
 <section class="a3"><h2>À l'Acte III <span class="pill st-proposition">proposition</span></h2><div class="prose"><p>Annoncée trois jours avant, à date fixe : aux Portes de <a class="wl" href="sys-hald.html">Hald</a>, le Duc et la Margrave alignent ce qui reste de la flotte de l'Empire. Tu regardes, et tu attends ; ou tu pilles le champ ensuite ; ou tu restes chez toi. C'est <strong>la guerre des autres</strong> (<a class="wl" href="concept-bataille-de-saison.html">La bataille de saison</a>) : tu n'y entreras que plus tard. <a class="wl" href="perso-ianos.html">IANOS</a> voit la date, pas qui vient : c'est ainsi que le centre de renseignement s'apprend. Au replay, la ligne du Duc tient, et <a class="wl" href="perso-talia.html">Talia</a> en tire <a class="wl" href="techno-tactique-de-ligne.html">la Tactique de ligne</a>.</p>

@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte III · mouvement II · tout l&#x27;acte, à chaque grief</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-douzieme-marche.html">La Douzième Marche</a></td></tr><tr><th>Participants</th><td><img class="bl-s" src="blasons/maison-rhasque.svg" alt="" width="20" height="24"><a class="wl" href="maison-rhasque.html">La maison Rhasque</a>, <img class="bl-s" src="blasons/maison-estre.svg" alt="" width="20" height="24"><a class="wl" href="maison-estre.html">Maison d&#x27;Estre</a>, <img class="bl-s" src="blasons/maison-argent.svg" alt="" width="20" height="24"><a class="wl" href="maison-argent.html">Maison d&#x27;Argent</a></td></tr><tr><th>Issue</th><td>les ducs pèsent</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-levees">Dans la chronologie <span class="mono">42 / 73</span></a><div class="chpn"><a href="evt-vote-de-la-regence.html"><small>avant</small>Le vote de la régence</a><a class="nx" href="evt-famine-des-marches.html"><small>après</small>La famine des marches</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-levees">Dans la chronologie <span class="mono">42 / 75</span></a><div class="chpn"><a href="evt-vote-de-la-regence.html"><small>avant</small>Le vote de la régence</a><a class="nx" href="evt-famine-des-marches.html"><small>après</small>La famine des marches</a></div></div>
 </aside>
 <div class="prose"><p>Chaque grande maison tient bien plus que ce que tu en vois : des provinces entières qui ne viennent jamais dans ta marche, mais lui envoient des flottes. Le premier système que tu lui prends appelle sa première levée ; le grief suivant, la seconde, plus grosse et plus lente. Une levée est un vol daté, annoncé soixante-douze heures avant d'entrer dans ta marche, que la carte galactique montre se rassembler. Elle ne prend jamais un monde à toi ; elle reprend les sièges d'un système.</p>
 <p>Chacune selon son vice : le <a class="wl" href="perso-duc-rhasque.html">Duc</a> en a trois, lentes et de plus en plus grosses (l'escadre des dépôts, la force d'intervention qui vise Sarn, la grande levée des marches), et après la troisième <strong>il ne lui reste que Morn</strong> ; <a class="wl" href="maison-estre.html">la Margrave</a> deux, rapides et lourdes ; <a class="wl" href="maison-argent.html">Sélène</a> achète la sienne ; <a class="wl" href="maison-vor.html">Orv</a> ne lève pas, il ferme. Lever coûte : la province perd un cran de revenu, et ses affamés deviennent des <a class="wl" href="faction-compagnies-franches.html">compagnies franches</a>. Un traité suspend une levée sans l'effacer. Les <a class="wl" href="concept-nouvelles-de-l-empire.html">nouvelles de l&#x27;Empire</a> annoncent chaque levée.</p></div>

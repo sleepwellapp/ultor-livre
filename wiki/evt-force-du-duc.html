@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement III · Acte II, vers les jours 55 à 66</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-duc-rhasque.html">Le Duc Rhasque</a>, <img class="bl-s" src="blasons/maison-rhasque.svg" alt="" width="20" height="24"><a class="wl" href="maison-rhasque.html">La maison Rhasque</a>, <a class="wl" href="perso-vahn.html">Vahn le Cadet</a>, <a class="wl" href="perso-cafard.html">Kithrin Chass, le Cafard</a></td></tr><tr><th>Issue</th><td>elle écrase la flotte de Vahn et repart</td></tr><tr><th>Quand</th><td>Acte II, vers les jours 55 à 66</td></tr><tr><th>Où</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Issue</th><td>elle écrase la flotte de Vahn et repart</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-force-du-duc">Dans la chronologie <span class="mono">24 / 73</span></a><div class="chpn"><a href="bataille-flotte-de-vahn.html"><small>avant</small>La flotte de Vahn à la Passe</a><a class="nx" href="evt-colonie-rasee.html"><small>après</small>La colonie rasée</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-force-du-duc">Dans la chronologie <span class="mono">24 / 75</span></a><div class="chpn"><a href="bataille-flotte-de-vahn.html"><small>avant</small>La flotte de Vahn à la Passe</a><a class="nx" href="evt-colonie-rasee.html"><small>après</small>La colonie rasée</a></div></div>
 </aside>
 <div class="prose"><p>Le <a class="wl" href="perso-duc-rhasque.html">Duc</a> a lu le mouvement de la flotte de <a class="wl" href="perso-vahn.html">Vahn</a> ; il ne sait pas pourquoi elle entre dans ce système, et il croit à une guerre de territoire (le <a class="wl" href="perso-cafard.html">Cafard</a> est son vassal). <a class="wl" href="perso-ianos.html">IANOS</a> : « Une flotte aux couleurs du Duc Rhasque entre par la Passe de Sarn. Le Dédalus n'est pas avec elle, mais elle aligne des frégates, des destroyers et des bastions : elle est trop forte pour ta flotte, évite-la. »</p>
 <p>C'est une garde, pas une chasse : elle fait escale sur les bases du Cafard, ne s'approche pas de tes mondes, et tant qu'elle est là tes marines courent plus de risque sur chaque mission du système. Elle se bat à la Passe contre Vahn (<a class="wl" href="bataille-flotte-de-vahn.html">La flotte de Vahn à la Passe</a>). Si le <a class="wl" href="evt-courrier-au-duc.html">courrier</a> est passé, elle arrive plus tôt et reste neuf jours après la bataille ; sinon, elle repart aussitôt. « La flotte du Duc Rhasque est repartie par la Passe de Sarn. » Ce n'est pas le <a class="wl" href="vaisseau-dedalus.html">Dédalus</a> : le Duc ne quitte jamais le sceau.</p></div>

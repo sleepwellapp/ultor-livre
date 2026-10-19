@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement III · Acte II, à la peur, vers le jour 49</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-cafard.html">Kithrin Chass, le Cafard</a>, <a class="wl" href="perso-duc-rhasque.html">Le Duc Rhasque</a>, <a class="wl" href="perso-heros.html">Ultor</a></td></tr><tr><th>Issue</th><td>intercepté, ou le Duc averti</td></tr><tr><th>Quand</th><td>Acte II, à la peur, vers le jour 49</td></tr><tr><th>Où</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Issue</th><td>intercepté, ou le Duc averti</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-courrier-au-duc">Dans la chronologie <span class="mono">21 / 73</span></a><div class="chpn"><a href="evt-retour-du-cafard.html"><small>avant</small>Le retour du Cafard</a><a class="nx" href="bataille-cales-de-cendre.html"><small>après</small>La chute des Cales de Cendre</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-courrier-au-duc">Dans la chronologie <span class="mono">21 / 75</span></a><div class="chpn"><a href="evt-retour-du-cafard.html"><small>avant</small>Le retour du Cafard</a><a class="nx" href="bataille-cales-de-cendre.html"><small>après</small>La chute des Cales de Cendre</a></div></div>
 </aside>
 <div class="prose"><p>Quelques heures après sa peur, un vaisseau léger attend à la <a class="wl" href="lieu-passe-de-sarn.html">Passe de Sarn</a>, sous escorte. <a class="wl" href="perso-ianos.html">IANOS</a> : « Il ne porte ni métal ni cristal : c'est un courrier, et le Cafard n'a de comptes à rendre qu'au Duc Rhasque. » Une fenêtre de quatorze heures, une seule lettre par partie.</p>
 <p>Prise, la lettre se lit sous le rapport : « Monseigneur, Pendant que j'étais en campagne à vos côtés, puis depuis mon retour, j'ai perdu le Relais de Kesh, le Dépôt de la Passe et une partie de mes bases, avec leurs garnisons. Ce ne sont pas des pillards : leurs escadres manœuvrent comme on l'apprend dans les écoles de l'Empire, et je ne sais pas qui les commande. Je vous demande une escadre de ligne pour tenir mes bases. Le tribut partira à sa date. Kithrin Chass, Seigneur-Gardien de Cinis. »</p>

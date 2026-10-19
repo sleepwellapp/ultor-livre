@@ -719,14 +719,41 @@
   .oublis s { color: var(--eteint); text-decoration-color: var(--acier); }
   .oublis .fait { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--platine); margin-left: 6px; }
 </style>
+<link rel="stylesheet" href="../wiki/assets/site.css">
+<script src="../wiki/assets/site.js" defer></script>
+<style>
+/* le site : l'en-tête commun, la largeur du site, un seul accent (l'ambre) */
+body{margin:0;--site-g:var(--gouttiere)}
+.livre{max-width:1120px}
+.corps a{color:var(--platine);text-decoration-color:rgba(232,166,74,.5)}
+.corps a:hover{text-decoration-color:var(--ambre)}
+.corps .pager a{text-decoration:none}
+:focus-visible{outline-color:var(--ambre)}
+::selection{background:rgba(232,166,74,.28)}
+@media (min-width:980px){.cote{padding-top:30px}}
+</style>
 <style>a.wk{color:inherit;text-decoration:underline dotted;text-decoration-color:rgba(232,166,74,.6);text-underline-offset:3px;text-decoration-thickness:1px}a.wk:hover{text-decoration-style:solid}</style>
 </head>
 <body>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/" aria-current="page"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
+  </div>
+</div>
+</header>
 
 <div class="livre">
   <div class="cote">
     <header class="tete">
-      <p class="sur-titre"><a class="wk" href="../wiki/perso-heros.html">Ultor</a> · Ash of <a class="wk" href="../wiki/faction-empire.html">Empire</a></p>
+      <p class="sur-titre">Ultor · Ash of Empire</p>
       <h1>Le livre d'Ultor</h1>
     </header>
 
@@ -736,7 +763,7 @@
 
     <!-- MENU -->
     <nav class="menu" aria-label="Chapitres">
-      <a class="onglet" href="#accueil">Accueil</a>
+      <a class="onglet" href="#accueil">Tableau de bord</a>
       <a class="onglet" href="#histoire">Histoire</a>
       <a class="onglet" href="#acte1">Acte 1</a>
       <a class="onglet" href="#acte2">Acte 2</a>

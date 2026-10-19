@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte III · mouvement V · fin de l&#x27;acte</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-seuil-du-trone.html">Le seuil du trône</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-heros.html">Ultor</a>, <img class="bl-s" src="blasons/faction-conseil.svg" alt="" width="20" height="24"><a class="wl" href="faction-conseil.html">Le Conseil de l&#x27;Empire</a>, <a class="wl" href="concept-sceau.html">Le sceau du Conseil</a></td></tr><tr><th>Issue</th><td>le seuil, pas le trône</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-conseil-d-aurelle">Dans la chronologie <span class="mono">70 / 73</span></a><div class="chpn"><a href="evt-descente-sous-la-plaine.html"><small>avant</small>La descente sous la plaine</a><a class="nx" href="evt-chute-de-l-acte-iii.html"><small>après</small>La chute de l&#x27;Acte III</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-conseil-d-aurelle">Dans la chronologie <span class="mono">70 / 75</span></a><div class="chpn"><a href="evt-descente-sous-la-plaine.html"><small>avant</small>La descente sous la plaine</a><a class="nx" href="evt-chute-de-l-acte-iii.html"><small>après</small>La chute de l&#x27;Acte III</a></div></div>
 </aside>
 <div class="prose"><p>L'Ichor, le Conseil et le sceau sont à toi. Le <a class="wl" href="faction-conseil.html">Conseil</a> se réunit à <a class="wl" href="sys-aurelle.html">Aurelle</a> sous la garde des archivistes, au <a class="wl" href="lieu-seuil-du-trone.html">seuil du trône</a>. La salle dépend de tes choix : <a class="wl" href="perso-odile.html">Odile</a> et <a class="wl" href="perso-margrave.html">la Margrave</a> y siègent ou non ; <a class="wl" href="perso-vahn.html">ton frère</a> s'y tient un pas derrière toi, enchaîné au fond, ou son siège est vide ; le <a class="wl" href="perso-duc-rhasque.html">Duc</a> y porte le sceau à genoux s'il a repris son serment ; démasqué, la séance s'ouvre sur les témoins d'Ys ; masqué jusqu'au bout, tu retires le masque. Sous la voûte, quelque chose bat trois fois.</p>
 <p>Le nom n'est jamais écrit. Et la fin proposée l'interrompt (<a class="wl" href="evt-chute-de-l-acte-iii.html">La chute de l&#x27;Acte III</a>).</p></div>

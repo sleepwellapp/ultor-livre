@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-concept">
@@ -32,9 +38,10 @@
 <p class="resume">Au-delà de l'Empire, d'autres empires, que les dieux déplacent par les portes comme des pions. À trancher.</p>
 <div class="cols"><div class="main">
 <div class="prose"><p><strong>Proposition, à trancher.</strong> L'Empire n'est pas seul. Les <a class="wl" href="faction-veilleurs.html">Veilleurs</a>, les <a class="wl" href="faction-fondeurs.html">Fondeurs</a> et les <a class="wl" href="faction-sans-nom.html">Sans-Nom</a> étaient des peuples sur ces routes avant lui ; d'autres empires vivent encore au-delà, dans d'autres galaxies ou plus loin, et les dieux belliqueux du <a class="wl" href="concept-pantheon.html">panthéon</a> les déplacent par les portes.</p>
-<p>Le joueur l'apprend à la toute fin, quand une porte s'ouvre malgré IANOS et qu'une flotte d'un empire lointain, le pion d'un autre dieu, passe par lui (<a class="wl" href="evt-chute-de-l-acte-iii.html">La chute de l&#x27;Acte III</a>). C'est le dézoom qui ouvre l'Acte IV : l'Empire et son trône deviennent secondaires. Leurs noms, leurs livrées et leurs dieux sont à trouver.</p></div>
-<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="evt-chute-de-l-acte-iii.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La chute de l&#x27;Acte III</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li><li><a href="sys-lanterne-sourde.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-systeme"/></svg><span>La Lanterne sourde</span></a></li><li><a href="concept-chaines-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les chaînes d&#x27;IANOS</span></a></li></ul></section>
-<section class="rel cited"><h2>Cité dans <span class="mono">5</span></h2><ul class="chips"><li><a href="evt-chute-de-l-acte-iii.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La chute de l&#x27;Acte III</span></a></li><li><a href="evt-mouvement-5.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Mouvement V · Le tableau</span></a></li><li><a href="concept-chaines-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les chaînes d&#x27;IANOS</span></a></li><li><a href="concept-indices-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les indices d&#x27;IANOS</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li></ul></section>
+<p>Le joueur l'apprend à la toute fin, quand une porte s'ouvre malgré IANOS et qu'une flotte d'un empire lointain, le pion d'un autre dieu, passe par lui (<a class="wl" href="evt-chute-de-l-acte-iii.html">La chute de l&#x27;Acte III</a>). C'est le dézoom qui ouvre l'Acte IV : l'Empire et son trône deviennent secondaires. Leurs noms, leurs livrées et leurs dieux sont à trouver.</p>
+<p>Ce que la fin fait reconnaître : la flotte qui force la porte au seuil d'Aurelle a le dessin du cône mort de <a class="wl" href="sys-herse.html">la Herse</a>. Les coques anciennes qu'on ne reconnaissait pas, le <a class="wl" href="lieu-vieux-champ.html">vieux champ</a>, <a class="wl" href="planete-cinis-ii-a.html">l&#x27;Ossuaire</a>, la Herse, étaient les flottes de ces pions, mortes jadis en attaquant IANOS (<a class="wl" href="evt-mort-d-ianos.html">La mort d&#x27;IANOS</a>). Ils restaient loin parce que ses portes font barrière (<a class="wl" href="concept-barriere-des-portes.html">La barrière des portes</a>) ; il faiblit, et ils peuvent venir : c'est le moteur de l'Acte IV.</p></div>
+<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="evt-chute-de-l-acte-iii.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La chute de l&#x27;Acte III</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li><li><a href="sys-lanterne-sourde.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-systeme"/></svg><span>La Lanterne sourde</span></a></li><li><a href="concept-chaines-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les chaînes d&#x27;IANOS</span></a></li><li><a href="sys-herse.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-systeme"/></svg><span>La Herse</span></a></li><li><a href="lieu-vieux-champ.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>Le vieux champ</span></a></li><li><a href="planete-cinis-ii-a.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>Cinis II a, l&#x27;Ossuaire</span></a></li><li><a href="evt-mort-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La mort d&#x27;IANOS</span></a></li><li><a href="concept-barriere-des-portes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>La barrière des portes</span></a></li></ul></section>
+<section class="rel cited"><h2>Cité dans <span class="mono">9</span></h2><ul class="chips"><li><a href="perso-empereur.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>L&#x27;Empereur</span></a></li><li><a href="faction-sans-nom.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Sans-Nom</span></a></li><li><a href="evt-chute-de-l-acte-iii.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La chute de l&#x27;Acte III</span></a></li><li><a href="evt-mouvement-5.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Mouvement V · Le tableau</span></a></li><li><a href="bataille-champ-devant-la-porte.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg><span>Le champ devant la porte</span></a></li><li><a href="concept-barriere-des-portes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>La barrière des portes</span></a></li><li><a href="concept-chaines-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les chaînes d&#x27;IANOS</span></a></li><li><a href="concept-indices-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les indices d&#x27;IANOS</span></a></li><li><a href="concept-pantheon.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Le panthéon</span></a></li></ul></section>
 </div></div></article>
 </main>
 <footer class="foot">

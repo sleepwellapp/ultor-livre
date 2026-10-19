@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-evenement">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg>Événement</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement II · Acte II, dès le jour 22, puis tous les huit jours</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-cafard.html">Kithrin Chass, le Cafard</a>, <a class="wl" href="perso-duc-rhasque.html">Le Duc Rhasque</a>, <a class="wl" href="perso-heros.html">Ultor</a></td></tr><tr><th>Issue</th><td>intercepté ou passé</td></tr><tr><th>Quand</th><td>Acte II, dès le jour 22, puis tous les huit jours</td></tr><tr><th>Où</th><td><a class="wl" href="lieu-passe-de-sarn.html">La Passe de Sarn</a></td></tr><tr><th>Issue</th><td>intercepté ou passé</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-tribut-du-duc">Dans la chronologie <span class="mono">13 / 73</span></a><div class="chpn"><a href="bataille-epave-de-la-ceinture.html"><small>avant</small>La première victoire : l&#x27;Épave de la Ceinture</a><a class="nx" href="evt-premiere-base.html"><small>après</small>Sa première base tombe</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-evt-tribut-du-duc">Dans la chronologie <span class="mono">13 / 75</span></a><div class="chpn"><a href="bataille-epave-de-la-ceinture.html"><small>avant</small>La première victoire : l&#x27;Épave de la Ceinture</a><a class="nx" href="evt-premiere-base.html"><small>après</small>Sa première base tombe</a></div></div>
 </aside>
 <div class="prose"><p>Tous les huit jours environ, un convoi quitte la <a class="wl" href="lieu-maison-du-cafard.html">maison du Cafard</a> et emporte vers la <a class="wl" href="lieu-passe-de-sarn.html">Passe</a> la part qu'il doit à son maître (<a class="wl" href="concept-tribut.html">La dîme et le tribut</a>). Il traverse la carte avec son escorte, et tu peux l'intercepter. Le premier pris révèle ses couleurs, celles du <a class="wl" href="perso-duc-rhasque.html">Duc Rhasque</a> : « Le Cafard ne paie pas seulement la bande et ses lieutenants : il paie l'homme dont le Dédalus a tiré le premier. » Sur son manifeste, le vrai nom (<a class="wl" href="evt-vrai-nom.html">Le vrai nom : Kithrin Chass</a>).</p>
 <p>« Le tribut du Duc ne sortira pas du système. » Chaque prise apporte du butin, une <a class="wl" href="concept-nouvelles-de-l-empire.html">nouvelle de l&#x27;Empire</a>, et le Duc note ce que tu lui prends : ses escortes grossissent. Un captif peut livrer la route du tribut.</p></div>

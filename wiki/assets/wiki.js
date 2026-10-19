@@ -1,69 +1,9 @@
-/* Le wiki d'Ultor · la recherche au fil de la frappe, la visionneuse, la carte (zoom et déplacement au doigt). */
+/* Le wiki d'Ultor · la visionneuse, la carte (zoom et déplacement au doigt). La recherche est celle du site (assets/site.js). */
 (function () {
   'use strict';
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
-  const fold = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-
-  // ── la recherche
-  let INDEX = null, loading = null;
-  function load() {
-    if (INDEX) return Promise.resolve(INDEX);
-    if (!loading) loading = fetch('recherche.json').then(r => r.json()).then(j => {
-      INDEX = j.map(e => Object.assign(e, { fn: fold(e.n), fa: (e.a || []).map(fold), fr: fold(e.r) }));
-      return INDEX;
-    }).catch(() => (INDEX = []));
-    return loading;
-  }
-  function score(e, q, words) {
-    let s = 0;
-    const names = [e.fn].concat(e.fa);
-    for (const n of names) {
-      if (n === q) s = Math.max(s, 100);
-      else if (n.startsWith(q)) s = Math.max(s, 80);
-      else if (n.split(/[\s'’-]+/).some(w => w.startsWith(q))) s = Math.max(s, 60);
-      else if (n.includes(q)) s = Math.max(s, 40);
-    }
-    if (!s && words.every(w => names.some(n => n.includes(w)) || e.fr.includes(w))) s = words.every(w => names.some(n => n.includes(w))) ? 30 : 12;
-    return s;
-  }
-  function mark(name, q) {
-    const f = fold(name), i = f.indexOf(q);
-    if (i < 0 || !q) return esc(name);
-    return esc(name.slice(0, i)) + '<mark>' + esc(name.slice(i, i + q.length)) + '</mark>' + esc(name.slice(i + q.length));
-  }
-  function setupSearch(form) {
-    const input = $('input', form), list = $('.qr', form);
-    let items = [], sel = -1;
-    function close() { list.hidden = true; input.setAttribute('aria-expanded', 'false'); sel = -1; }
-    function paint() { $$('li', list).forEach((li, i) => li.classList.toggle('sel', i === sel)); }
-    function run() {
-      const q = fold(input.value.trim());
-      if (!q) { close(); return; }
-      load().then(idx => {
-        const words = q.split(/\s+/).filter(Boolean);
-        items = idx.map(e => [score(e, q, words), e]).filter(x => x[0] > 0)
-          .sort((a, b) => b[0] - a[0] || a[1].fn.localeCompare(b[1].fn)).slice(0, 12).map(x => x[1]);
-        sel = items.length ? 0 : -1;
-        list.innerHTML = items.length ? items.map((e, i) =>
-          '<li role="option" id="qr' + i + '"><a href="' + esc(e.u) + '">' +
-          (e.y ? '<svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-' + esc(e.y) + '"/></svg>' : '<svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-systeme"/></svg>') +
-          '<b>' + mark(e.n, q) + '<small>' + esc(e.t) + (e.p ? ' · proposition' : '') + '</small></b><span>' + esc(e.r || '') + '</span></a></li>').join('')
-          : '<li class="none">Aucune fiche ne porte ce nom.</li>';
-        list.hidden = false; input.setAttribute('aria-expanded', 'true'); paint();
-      });
-    }
-    input.addEventListener('input', run);
-    input.addEventListener('focus', () => { load(); if (input.value.trim()) run(); });
-    input.addEventListener('keydown', ev => {
-      if (ev.key === 'ArrowDown' && items.length) { sel = (sel + 1) % items.length; paint(); ev.preventDefault(); }
-      else if (ev.key === 'ArrowUp' && items.length) { sel = (sel - 1 + items.length) % items.length; paint(); ev.preventDefault(); }
-      else if (ev.key === 'Enter') { if (sel >= 0 && items[sel]) location.href = items[sel].u; ev.preventDefault(); }
-      else if (ev.key === 'Escape') { close(); }
-    });
-    document.addEventListener('click', ev => { if (!form.contains(ev.target)) close(); });
-  }
 
   // ── la visionneuse
   function setupLightbox() {
@@ -198,7 +138,6 @@
   }
 
   function start() {
-    $$('form.search').forEach(setupSearch);
     setupLightbox(); setupStaticMaps(); setupMap();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();

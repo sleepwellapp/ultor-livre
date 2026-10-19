@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-bataille">
@@ -34,7 +40,7 @@
 <aside class="box">
 <div class="boxhead"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-bataille"/></svg>Bataille</div>
 <table class="facts"><tr><th>Quand</th><td>Acte II · mouvement V · fin de l&#x27;Acte II, vers le jour 104</td></tr><tr><th>Lieu</th><td><a class="wl" href="lieu-repaire-de-la-nuee.html">Le Repaire de la Nuée</a></td></tr><tr><th>Participants</th><td><a class="wl" href="perso-heros.html">Ultor</a>, <a class="wl" href="perso-cafard.html">Kithrin Chass, le Cafard</a>, <a class="wl" href="vaisseau-nuee.html">La Nuée</a>, <a class="wl" href="perso-talia.html">Talia Brenn</a></td></tr><tr><th>Issue</th><td>la Nuée tombe ; la Passe est à toi</td></tr><tr><th>Quand</th><td>fin de l'Acte II, vers le jour 104</td></tr><tr><th>Où</th><td><a class="wl" href="lieu-repaire-de-la-nuee.html">Le Repaire de la Nuée</a></td></tr><tr><th>Issue</th><td>la Nuée tombe ; la Passe est à toi</td></tr></table>
-<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-de-la-nuee">Dans la chronologie <span class="mono">29 / 73</span></a><div class="chpn"><a href="evt-choix-sur-la-passerelle.html"><small>avant</small>Ton choix sur la passerelle de la Nuée</a><a class="nx" href="evt-signal.html"><small>après</small>Le signal des trois battements</a></div></div>
+<div class="chnav"><a class="chpos" href="chronologie.html#c-bataille-de-la-nuee">Dans la chronologie <span class="mono">29 / 75</span></a><div class="chpn"><a href="evt-choix-sur-la-passerelle.html"><small>avant</small>Ton choix sur la passerelle de la Nuée</a><a class="nx" href="evt-signal.html"><small>après</small>Le signal des trois battements</a></div></div>
 </aside>
 <div class="prose"><p><a class="wl" href="perso-ianos.html">IANOS</a> : « Je la vois. Ou plutôt : je vois le trou qu'elle fait dans le fond de bande. » Puis : « Commande des croiseurs au Chantier, pas des chasseurs. » Et : « Deux batailles, une sortie. L'essaim sort d'abord : c'est ce qu'elle a toujours fait, et ça a toujours suffi. »</p>
 <p>Au <a class="wl" href="lieu-repaire-de-la-nuee.html">Repaire</a>, au cœur de la <a class="wl" href="lieu-passe-de-sarn.html">Passe</a>, vingt et un mille vaisseaux contre son nuage. Ses messages montent pendant la bataille : au contact, « Encore des pillards. Écrasez-les. » ; quand l'essaim plie, « Qui a formé ces escadres ? Ce n'est pas une bande. » ; quand ta manœuvre se lit, « Cet échelon refusé à gauche… J'ai déjà vu cette manœuvre. Dans la Ceinture d'Ys. » Il était à Ys, dans la deuxième ligne du Duc.</p>

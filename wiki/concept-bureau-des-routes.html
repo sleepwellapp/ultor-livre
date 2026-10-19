@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-concept">
@@ -33,7 +39,7 @@
 <div class="cols"><div class="main">
 <div class="prose"><p>Qui calcule le saut ? <a class="wl" href="perso-ianos.html">IANOS</a>, tout de suite, avec les portes muettes. Ou le bureau de <a class="wl" href="perso-talia.html">Talia</a> : un jour de calcul, <a class="wl" href="concept-gages-des-pilotes.html">les gages des pilotes</a>, les portes connues, et aucun gain de vitesse, pour que la méfiance ne soit pas le meilleur choix. C'est le geste de <a class="wl" href="concept-confiance-d-ianos.html">la confiance</a> qui revient le plus souvent.</p></div>
 <section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="concept-confiance-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>La confiance en IANOS</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="evt-premier-saut.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le premier saut</span></a></li></ul></section>
-<section class="rel cited"><h2>Cité dans <span class="mono">6</span></h2><ul class="chips"><li><a href="perso-talia.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>Talia Brenn</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="evt-mouvement-1.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Mouvement I · La Passe ouverte</span></a></li><li><a href="evt-premier-saut.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le premier saut</span></a></li><li><a href="concept-confiance-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>La confiance en IANOS</span></a></li><li><a href="concept-gages-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les gages des pilotes</span></a></li></ul></section>
+<section class="rel cited"><h2>Cité dans <span class="mono">7</span></h2><ul class="chips"><li><a href="perso-talia.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>Talia Brenn</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="evt-mouvement-1.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Mouvement I · La Passe ouverte</span></a></li><li><a href="evt-premier-saut.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le premier saut</span></a></li><li><a href="evt-retour-a-ys.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le retour à Ys</span></a></li><li><a href="concept-confiance-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>La confiance en IANOS</span></a></li><li><a href="concept-gages-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-concept"/></svg><span>Les gages des pilotes</span></a></li></ul></section>
 </div></div></article>
 </main>
 <footer class="foot">

@@ -10,19 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Marcellus&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="assets/wiki.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 <script src="assets/wiki.js" defer></script>
 </head>
 <body>
-<header class="top">
-  <div class="bar">
-    <a class="home" href="../" aria-label="Accueil du livre">‹</a>
-    <a class="brand" href="index.html">Ultor <span>le wiki</span></a>
-    <nav><a href="carte.html">Carte</a><a href="chronologie.html">Chronologie</a></nav>
+<header class="site" data-root="../">
+<div class="site-in">
+  <div class="site-bar">
+    <a class="site-brand" href="../" aria-label="Ultor, l'accueil du site">Ultor</a>
+    <nav class="site-nav" aria-label="Le site"><a class="sn-acc" href="../">Accueil</a><a href="../livre/"><span class="sn-l">Le&nbsp;</span>livre</a><a href="../acte3/"><span class="sn-l">L'</span>Acte III</a><a href="../wiki/" aria-current="page"><span class="sn-l">Le&nbsp;</span>wiki</a></nav>
+    <button class="site-qb" type="button" aria-label="Chercher dans tout le site" aria-expanded="false" aria-controls="site-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+    <form class="site-q" id="site-q" role="search" action="#" onsubmit="return false">
+      <svg class="lp" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input type="search" name="q" placeholder="Chercher un nom, un chapitre, une décision" autocomplete="off" aria-label="Chercher dans tout le site" aria-controls="site-qr" aria-autocomplete="list" aria-expanded="false">
+      <ul class="site-qr" id="site-qr" role="listbox" hidden></ul>
+    </form>
   </div>
-  <form class="search" role="search" action="index.html" onsubmit="return false">
-    <input type="search" name="q" placeholder="Chercher un nom, un monde, une bataille" autocomplete="off" aria-label="Chercher dans le wiki" aria-controls="qr" aria-autocomplete="list">
-    <ul class="qr" id="qr" role="listbox" hidden></ul>
-  </form>
+  <nav class="site-sub" aria-label="Le wiki"><a href="index.html">Le wiki</a><a href="carte.html">La carte</a><a href="chronologie.html">La chronologie</a><a href="tout.html">L'index</a></nav>
+</div>
 </header>
 <main>
 <article class="fiche t-concept">
@@ -31,8 +37,9 @@
 <div class="pills"><span class="pill st-proposition">proposition</span><span class="pill actes">Acte III</span></div>
 <p class="resume">Le rythme qui revient partout : la balise de Cinis II, la porte au premier saut, les messages des traîtres, la cloche de Glas.</p>
 <div class="cols"><div class="main">
-<div class="prose"><p>Trois battements au même bleu, puis plus rien. La balise du titre de l'Acte I ; <a class="wl" href="evt-signal.html">le signal</a> capté deux fois ; la porte de Sarn au <a class="wl" href="evt-premier-saut.html">premier saut</a> ; les messages sans expéditeur de <a class="wl" href="perso-selene.html">Sélène</a> ; <a class="wl" href="planete-glas-cloche.html">la cloche de Glas</a>, qui l'a noté avant l'Empire ; les trois temps que les pilotes de la Guilde comptent avant chaque saut ; la voûte d'Aurelle ; et <a class="wl" href="lieu-balise-sous-la-plaine.html">la balise sous la plaine</a>, à laquelle la lentille d'IANOS répond. Le joueur fait le lien ; le texte ne le fait jamais.</p></div>
-<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="lieu-balise-sous-la-plaine.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>La balise sous la plaine</span></a></li><li><a href="planete-glas-cloche.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>La cloche de Glas</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="evt-signal.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le signal des trois battements</span></a></li></ul></section>
+<div class="prose"><p>Trois battements au même bleu, puis plus rien. La balise du titre de l'Acte I ; <a class="wl" href="evt-signal.html">le signal</a> capté deux fois ; la porte de Sarn au <a class="wl" href="evt-premier-saut.html">premier saut</a> ; les messages sans expéditeur de <a class="wl" href="perso-selene.html">Sélène</a> ; <a class="wl" href="planete-glas-cloche.html">la cloche de Glas</a>, qui l'a noté avant l'Empire ; les trois temps que les pilotes de la Guilde comptent avant chaque saut ; la voûte d'Aurelle ; et <a class="wl" href="lieu-balise-sous-la-plaine.html">la balise sous la plaine</a>, à laquelle la lentille d'IANOS répond. Le joueur fait le lien ; le texte ne le fait jamais.</p>
+<p><strong>Ce que le joueur ignore encore.</strong> Ce qui bat sous la plaine, c'est <a class="wl" href="perso-ianos.html">IANOS</a> lui-même (<a class="wl" href="evt-mort-d-ianos.html">La mort d&#x27;IANOS</a>) : le joueur l'apprend à la descente.</p></div>
+<section class="rel"><h2>Voir aussi</h2><ul class="chips"><li><a href="lieu-balise-sous-la-plaine.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>La balise sous la plaine</span></a></li><li><a href="planete-glas-cloche.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>La cloche de Glas</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="evt-signal.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>Le signal des trois battements</span></a></li><li><a href="evt-mort-d-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-evenement"/></svg><span>La mort d&#x27;IANOS</span></a></li><li><a href="perso-ianos.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>IANOS</span></a></li></ul></section>
 <section class="rel cited"><h2>Cité dans <span class="mono">7</span></h2><ul class="chips"><li><a href="perso-selene.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-personnage"/></svg><span>Sélène, la Veuve d&#x27;Argent</span></a></li><li><a href="faction-guilde-des-pilotes.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>La Guilde des pilotes</span></a></li><li><a href="faction-veilleurs.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-faction"/></svg><span>Les Veilleurs</span></a></li><li><a href="planete-glas-cloche.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>La cloche de Glas</span></a></li><li><a href="planete-la-portee.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>La Portée</span></a></li><li><a href="planete-vor-ii.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-planete"/></svg><span>Vôr II</span></a></li><li><a href="lieu-balise-sous-la-plaine.html"><svg class="gl" aria-hidden="true"><use href="assets/types.svg#t-lieu"/></svg><span>La balise sous la plaine</span></a></li></ul></section>
 </div></div></article>
 </main>
